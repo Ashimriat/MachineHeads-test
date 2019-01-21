@@ -130,15 +130,23 @@ class MainPageManager {
       1: 'iPad',
       2: 'mac'
     };
-    const fillDeviceModels = devicesIndex => {
-      const modelsItems = self.devicesModels[devicesIndexes[devicesIndex]].map((model, index) => {
-        const $modelElement = $('<li></li>').text(model).addClass('header__mainMenu__troublesMenu__deviceModelsList__item');
+    const fillDeviceModels = deviceIndex => {
+      const modelsItems = self.devicesModels[devicesIndexes[deviceIndex]].map((model, index) => {
+        const $modelElement = $(
+          `<li class="header__mainMenu__troublesMenu__deviceModelsList__item">${model}</li>`
+        );
         if (index == 0) {
           $modelElement.addClass('header__mainMenu__troublesMenu__deviceModelsList__item--chosen');
         }
+        $modelElement.click(e => {
+          self.$troubles.deviceModelsList
+            .find('.header__mainMenu__troublesMenu__deviceModelsList__item--chosen')
+            .removeClass('header__mainMenu__troublesMenu__deviceModelsList__item--chosen');
+          $modelElement.addClass('header__mainMenu__troublesMenu__deviceModelsList__item--chosen');
+        });
         return $modelElement;
       });
-      const troublesItems = self.devicesTroubles[devicesIndexes[devicesIndex]].map(trouble => {
+      const troublesItems = self.devicesTroubles[devicesIndexes[deviceIndex]].map(trouble => {
         const $troubleElement = $(
           `<ul class="header__mainMenu__troublesMenu__cases__lists__list"></ul>`
         );
@@ -199,20 +207,10 @@ class MainPageManager {
           $(elem).find('.header__mainMenu__troublesMenu__devicesList__item__deviceName')
             .addClass('header__mainMenu__troublesMenu__devicesList__item__deviceName--chosen');
           $(elem).find('path').each((index, path) => $(path).attr('fill', '#f46841'));
-
           fillDeviceModels(index);
         });
     });
-    this.$troubles.deviceModelsList
-      .find('.header__mainMenu__troublesMenu__deviceModelsList__item')
-      .each((index, elem) => {
-        $(elem).click(e => {
-          self.$troubles.deviceModelsList
-            .find('.header__mainMenu__troublesMenu__deviceModelsList__item--chosen')
-            .removeClass('header__mainMenu__troublesMenu__deviceModelsList__item--chosen');
-          $(elem).addClass('header__mainMenu__troublesMenu__deviceModelsList__item--chosen');
-        });
-    });
+
     fillDeviceModels(0);
   };
 
