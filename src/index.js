@@ -16,6 +16,7 @@ class MainPageManager {
       menu: $('.troublesMenu'),
       devicesList: $('#devicesList'),
       deviceModelsList: $('#deviceModelsList'),
+      cases: $('#troublesCases'),
       select: $('.header__mainMenu__troublesMenu__mobileDeviceModelsList__select'),
       selectArrow: $('.header__mainMenu__troublesMenu__mobileDeviceModelsList__arrowIcon .arrowIcon')
     };
@@ -63,6 +64,25 @@ class MainPageManager {
       ],
       mac: ["21.5'", "27'", "Pro", "Mini"]
     };
+    this.devicesTroubles = {
+      iPhone: [
+        {title: 'Дисплей', cases: ['Разбился экран', 'Испортилась цветопередача']},
+        {title: 'Прошивка', cases: ['Не удаляется приложение']},
+      ],
+      iPad: [
+        {title: 'Батарея', cases: ['Вздулась батарея', 'Батарея не держит заряд']},
+        {title: 'Звук', cases: ['Повреждён динамик']},
+        {title: 'Разъёмы', cases: ['Не работают наушники']},
+        {title: 'Дисплей', cases: ['Разбился экран', 'Испортилась цветопередача']},
+        {title: 'Прошивка', cases: ['Не удаляется приложение']},
+      ],
+      mac: [
+        {title: 'Порты', cases: ['Отсутствует Ethernet порт', 'Повреждён Ethernet порт']},
+        {title: 'Дисплей', cases: ['Разбился экран', 'Испортилась цветопередача']},
+        {title: 'ОС', cases: ['Синий экран смерти']},
+      ],
+
+    }
   }
 
   init() {
@@ -118,14 +138,30 @@ class MainPageManager {
         }
         return $modelElement;
       });
+      const troublesItems = self.devicesTroubles[devicesIndexes[devicesIndex]].map(trouble => {
+        const $troubleElement = $(
+          `<ul class="header__mainMenu__troublesMenu__cases__lists__list"></ul>`
+        );
+        const $troubleElementTitle = $(
+          `<span class="header__mainMenu__troublesMenu__cases__lists__list__title">${trouble.title}</span>`
+        );
+        const $troubleElementCases = trouble.cases.map(caseName => {
+          return $(
+              `<li class="header__mainMenu__troublesMenu__cases__lists__list__item casesText"></li>`
+            )
+            .append(`<p>${caseName}</p>`)
+            .append('<span class="arrowIcon arrowIcon--right"></span>');
+        });
+        return $troubleElement.append($troubleElementTitle).append($troubleElementCases);
+      });
       self.$troubles.deviceModelsList.find('.header__mainMenu__troublesMenu__deviceModelsList__item').remove();
       for (let i = (modelsItems.length - 1); i >= 0; i--) {
         self.$troubles.deviceModelsList.prepend(modelsItems[i]);
       }
+      self.$troubles.cases.find('.header__mainMenu__troublesMenu__cases__lists__list').remove();
+      troublesItems.forEach(troubleItem => self.$troubles.cases.append(troubleItem));
     };
-    this.$troubles.container.hover(() => {
-      window.innerWidth >= 961 && toggleTroubles();
-    });
+    this.$troubles.container.hover(() => window.innerWidth >= 961 && toggleTroubles());
     this.$troubles.triggers.forEach(trigger => {
       trigger.click(() => {
         if (window.innerWidth <= 960) {
