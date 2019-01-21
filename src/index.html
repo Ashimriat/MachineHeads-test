@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel='stylesheet' href='./style.css'>
+</head>
+<body>
+<header class="header">
+  <div class="header__logo">
+    <img src="assets/images/logo.png">
+  </div>
+  <div class="header__mobileMenuButton mobileMenuButton transition--right">
+    <span class="burger"></span>
+  </div>
+  <ul id="mainMenu" class="header__mainMenu transition--right">
+    <li class="header__mainMenu__item">
+      <a class="header__mainMenu__item__link">
+        О нас
+      </a>
+    </li>
+    <div class="troubles">
+      <li class="header__mainMenu__item repair">
+        Ремонт
+      </li>
+      <li class="header__mainMenu__item problems">
+        Проблема с устройством
+      </li>
+      <div class="header__mainMenu__troublesMenu troublesMenu hidden transition--opacity transparent">
+        <span class="header__mainMenu__troublesMenu__closeIcon closeIcon"></span>
+        <ul id="devicesList" class="header__mainMenu__troublesMenu__devicesList">
+          <li class="header__mainMenu__troublesMenu__devicesList__item header__mainMenu__troublesMenu__devicesList__item--chosen">
+              <span class="header__mainMenu__troublesMenu__devicesList__item__deviceIcon">
+                <svg width="17" height="25" viewBox="0 0 17 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14.969 0H2.03096C1.1582 0 0.448242 0.710009 0.448242 1.58277V23.4173C0.448242 24.29 1.15825 25.0001 2.03101 25.0001H14.969C15.8417 25.0001 16.5517 24.29 16.5517 23.4173V1.58277C16.5517 0.710009 15.8417 0 14.969 0ZM1.24137 3.97812H15.7586V20.5115H1.24137V3.97812ZM2.03096 0.793129H14.969C15.4043 0.793129 15.7586 1.14734 15.7586 1.58277V3.44937H1.24137V1.58277C1.24137 1.14734 1.59558 0.793129 2.03096 0.793129ZM14.969 24.2069H2.03096C1.59558 24.2069 1.24132 23.8527 1.24132 23.4172V21.0402H15.7585V23.4172C15.7585 23.8527 15.4043 24.2069 14.969 24.2069Z" fill="#F46841"/>
+                  <path d="M8.5 21.3907C7.7838 21.3907 7.20117 21.9734 7.20117 22.6896C7.20117 23.4058 7.78386 23.9885 8.5 23.9885C9.21614 23.9885 9.79883 23.4058 9.79883 22.6896C9.79883 21.9735 9.21619 21.3907 8.5 21.3907ZM8.5 23.4597C8.07536 23.4597 7.72992 23.1142 7.72992 22.6896C7.72992 22.265 8.07536 21.9195 8.5 21.9195C8.92464 21.9195 9.27007 22.265 9.27007 22.6896C9.27007 23.1142 8.92464 23.4597 8.5 23.4597Z" fill="#F46841"/>
+                  <path d="M6.70224 2.51923H10.2978C10.4438 2.51923 10.5621 2.40084 10.5621 2.25485C10.5621 2.10887 10.4438 1.99048 10.2978 1.99048H6.70224C6.5562 1.99048 6.43787 2.10887 6.43787 2.25485C6.43787 2.40084 6.5562 2.51923 6.70224 2.51923Z" fill="#F46841"/>
+                  <path d="M5.7507 2.51923C5.81997 2.51923 5.88818 2.49121 5.93735 2.44203C5.98653 2.39233 6.01508 2.32465 6.01508 2.25485C6.01508 2.18506 5.98653 2.11738 5.93735 2.06768C5.88813 2.0185 5.81992 1.99048 5.7507 1.99048C5.68091 1.99048 5.61318 2.0185 5.56353 2.06768C5.51435 2.11685 5.48633 2.18506 5.48633 2.25485C5.48633 2.32465 5.51435 2.39233 5.56353 2.44203C5.6127 2.49121 5.68091 2.51923 5.7507 2.51923Z" fill="#F46841"/>
+                </svg>
+              </span>
+            <span class="header__mainMenu__troublesMenu__devicesList__item__deviceName header__mainMenu__troublesMenu__devicesList__item__deviceName--chosen">
+                iPhone
+              </span>
+          </li>
+          <li class="header__mainMenu__troublesMenu__devicesList__item">
+              <span class="header__mainMenu__troublesMenu__devicesList__item__deviceIcon">
+                <svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13.1511 23.075C13.1511 23.5366 12.8012 23.9107 12.3699 23.9107C11.9384 23.9107 11.5886 23.5366 11.5886 23.075C11.5886 22.6134 11.9384 22.2393 12.3699 22.2393C12.8012 22.2393 13.1511 22.6134 13.1511 23.075Z" fill="#646F75"/>
+                  <path d="M20.9636 0.0928955H3.77612C3.12885 0.0928955 2.60425 0.654228 2.60425 1.34647V23.9108C2.60425 24.603 3.12885 25.1643 3.77612 25.1643H20.9636C21.6108 25.1643 22.1355 24.603 22.1355 23.9108V1.34647C22.1355 0.654228 21.6108 0.0928955 20.9636 0.0928955ZM21.3542 23.9108C21.3542 24.1416 21.1792 24.3286 20.9636 24.3286H3.77612C3.56036 24.3286 3.3855 24.1416 3.3855 23.9108V1.34647C3.3855 1.11567 3.56036 0.92861 3.77612 0.92861H20.9636C21.1792 0.92861 21.3542 1.11567 21.3542 1.34647V23.9108Z" fill="#646F75"/>
+                  <path d="M19.8529 2.40332H5.14704C4.7409 2.40332 4.41174 2.76261 4.41174 3.20593V21.2646C4.41174 21.7079 4.7409 22.0672 5.14704 22.0672H19.8529C20.2589 22.0672 20.5882 21.7079 20.5882 21.2646V3.20593C20.5882 2.76261 20.2589 2.40332 19.8529 2.40332ZM5.14704 21.2646V3.20593H19.8529V21.2646H5.14704Z" fill="#646F75"/>
+                </svg>
+              </span>
+            <span class="header__mainMenu__troublesMenu__devicesList__item__deviceName">
+                iPad
+              </span>
+          </li>
+          <li class="header__mainMenu__troublesMenu__devicesList__item">
+              <span class="header__mainMenu__troublesMenu__devicesList__item__deviceIcon">
+                <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M23.1258 0.625H1.87417C0.840833 0.625 0 1.46583 0 2.49958V16.0417V17.9171C0 18.9504 0.840833 19.7917 1.87417 19.7917H9.31417C9.37333 20.5217 9.05667 21.2425 8.47125 21.655L7.72083 22.1842C7.67292 22.2175 7.63292 22.2579 7.6 22.3029C7.07708 22.3575 6.66667 22.7962 6.66667 23.3333C6.66667 23.9075 7.13375 24.375 7.70833 24.375H17.2917C17.8662 24.375 18.3333 23.9075 18.3333 23.3333C18.3333 22.7962 17.9233 22.3579 17.4004 22.3025C17.3679 22.2583 17.3283 22.2183 17.2817 22.1854L16.53 21.6558C15.9442 21.2429 15.6271 20.5221 15.6862 19.7917H23.1258C24.1592 19.7917 25 18.9508 25 17.9171V16.0417V2.49958C25 1.46583 24.1592 0.625 23.1258 0.625ZM0.833333 2.49958C0.833333 1.92542 1.30042 1.45833 1.87417 1.45833H23.1258C23.6996 1.45833 24.1667 1.92542 24.1667 2.49958V15.2083H0.833333V2.49958ZM17.2917 23.5417H7.70833C7.59542 23.5417 7.5 23.4462 7.5 23.3333C7.5 23.2204 7.59542 23.125 7.70833 23.125H8.01083H16.9892H17.2917C17.4046 23.125 17.5 23.2204 17.5 23.3333C17.5 23.4462 17.4046 23.5417 17.2917 23.5417ZM14.8508 19.7925C14.7954 20.7629 15.2187 21.7162 15.9879 22.2917H9.01292C9.78208 21.7162 10.2054 20.7625 10.15 19.7917L14.8508 19.7925ZM24.1667 17.9171C24.1667 18.4912 23.6996 18.9583 23.1258 18.9583H15.8575H9.14292H1.87417C1.30042 18.9583 0.833333 18.4912 0.833333 17.9171V16.0417H24.1667V17.9171Z" fill="#646F75"/>
+                  <path d="M2.08327 4.79167C2.18994 4.79167 2.29661 4.75084 2.37786 4.66959L4.04452 3.00292C4.20744 2.84 4.20744 2.57667 4.04452 2.41375C3.88161 2.25084 3.61827 2.25084 3.45536 2.41375L1.78869 4.08042C1.62577 4.24334 1.62577 4.50667 1.78869 4.66959C1.86994 4.75084 1.97661 4.79167 2.08327 4.79167Z" fill="#646F75"/>
+                  <path d="M2.08327 6.87496C2.18994 6.87496 2.29661 6.83413 2.37786 6.75288L3.21119 5.91955C3.37411 5.75663 3.37411 5.4933 3.21119 5.33038C3.04827 5.16746 2.78494 5.16746 2.62202 5.33038L1.78869 6.16371C1.62577 6.32663 1.62577 6.58996 1.78869 6.75288C1.86994 6.83413 1.97661 6.87496 2.08327 6.87496Z" fill="#646F75"/>
+                  <path d="M3.45421 4.49581C3.37879 4.57498 3.33337 4.68331 3.33337 4.79165C3.33337 4.89998 3.37879 5.00831 3.45421 5.08748C3.53296 5.16248 3.63712 5.20831 3.75004 5.20831C3.85837 5.20831 3.96671 5.16248 4.04587 5.08748C4.12087 5.00831 4.16671 4.89998 4.16671 4.79165C4.16671 4.68331 4.12087 4.57498 4.04587 4.49581C3.88754 4.34165 3.61254 4.34165 3.45421 4.49581Z" fill="#646F75"/>
+                  <path d="M4.28881 4.25292C4.37006 4.33417 4.47673 4.375 4.5834 4.375C4.69006 4.375 4.79673 4.33417 4.87798 4.25292L6.12798 3.00292C6.2909 2.84 6.2909 2.57667 6.12798 2.41375C5.96506 2.25084 5.70173 2.25084 5.53881 2.41375L4.28881 3.66375C4.1259 3.82667 4.1259 4.09 4.28881 4.25292Z" fill="#646F75"/>
+                  <path d="M5.53869 4.49707L1.78869 8.24707C1.62577 8.40998 1.62577 8.67332 1.78869 8.83623C1.86994 8.91748 1.97661 8.95832 2.08327 8.95832C2.18994 8.95832 2.29661 8.91748 2.37786 8.83623L6.12786 5.08623C6.29077 4.92332 6.29077 4.65998 6.12786 4.49707C5.96494 4.33415 5.70161 4.33415 5.53869 4.49707Z" fill="#646F75"/>
+                  <path d="M6.37083 3.6625C6.29542 3.74167 6.25 3.84583 6.25 3.95833C6.25 4.07083 6.29542 4.175 6.37083 4.25417C6.44958 4.32917 6.55375 4.375 6.66667 4.375C6.77917 4.375 6.88333 4.32917 6.9625 4.25417C7.0375 4.175 7.08333 4.07083 7.08333 3.95833C7.08333 3.84583 7.0375 3.74167 6.9625 3.6625C6.80833 3.50833 6.525 3.50833 6.37083 3.6625Z" fill="#646F75"/>
+                  <path d="M7.62211 2.41375L7.20544 2.83042C7.04252 2.99334 7.04252 3.25667 7.20544 3.41958C7.28669 3.50083 7.39336 3.54167 7.50002 3.54167C7.60669 3.54167 7.71336 3.50083 7.79461 3.41958L8.21127 3.00292C8.37419 2.84 8.37419 2.57667 8.21127 2.41375C8.04836 2.25084 7.78502 2.25084 7.62211 2.41375Z" fill="#646F75"/>
+                </svg>
+              </span>
+            <span class="header__mainMenu__troublesMenu__devicesList__item__deviceName">
+                Mac
+              </span>
+          </li>
+        </ul>
+        <span class="header__mainMenu__troublesMenu__divider"></span>
+        <div id="mobileDeviceModelsList" class="header__mainMenu__troublesMenu__mobileDeviceModelsList">
+          <p class="header__mainMenu__troublesMenu__mobileDeviceModelsList__title">
+            Выберите модель
+          </p>
+          <div class="header__mainMenu__troublesMenu__mobileDeviceModelsList__arrowIcon">
+            <span class="arrowIcon arrowIcon--down"></span>
+          </div>
+          <select class="header__mainMenu__troublesMenu__mobileDeviceModelsList__select">
+            <option class="header__mainMenu__troublesMenu__mobileDeviceModelsList__select__option">4</option>
+            <option class="header__mainMenu__troublesMenu__mobileDeviceModelsList__select__option">4s</option>
+            <option class="header__mainMenu__troublesMenu__mobileDeviceModelsList__select__option">5</option>
+            <option class="header__mainMenu__troublesMenu__mobileDeviceModelsList__select__option">5s</option>
+          </select>
+        </div>
+        <ul id="deviceModelsList" class="header__mainMenu__troublesMenu__deviceModelsList">
+          <a class="header__mainMenu__troublesMenu__deviceModelsList__all">
+            Все модели
+            <span class="arrowIcon arrowIcon--right"></span>
+          </a>
+        </ul>
+        <a class="header__mainMenu__troublesMenu__pricesButton pricesButton">
+          Смотреть прайс
+        </a>
+        <div class="header__mainMenu__troublesMenu__cases">
+          <a class="header__mainMenu__troublesMenu__cases__title">
+            Частые проблемы
+          </a>
+          <div class="header__mainMenu__troublesMenu__cases__lists">
+            <ul class="header__mainMenu__troublesMenu__cases__lists__list">
+              <span class="header__mainMenu__troublesMenu__cases__lists__list__title">
+                Дисплей
+              </span>
+              <li class="header__mainMenu__troublesMenu__cases__lists__list__item casesText">
+                <p>Разбит экран</p>
+                <span class="arrowIcon arrowIcon--right"></span>
+              </li>
+              <li class="header__mainMenu__troublesMenu__cases__lists__list__item casesText">
+                <p>Не работает экран</p>
+                <span class="arrowIcon arrowIcon--right"></span>
+              </li>
+              <li class="header__mainMenu__troublesMenu__cases__lists__list__item casesText">
+                <p>Разбит экран</p>
+                <span class="arrowIcon arrowIcon--right"></span>
+              </li>
+              <li class="header__mainMenu__troublesMenu__cases__lists__list__item casesText">
+                <p>Не работает экран</p>
+                <span class="arrowIcon arrowIcon--right"></span>
+              </li>
+            </ul>
+            <ul class="header__mainMenu__troublesMenu__cases__lists__list">
+              <span class="header__mainMenu__troublesMenu__cases__lists__list__title">
+                Электроника
+              </span>
+              <li class="header__mainMenu__troublesMenu__cases__lists__list__item casesText">
+                <p>Разбит экран</p>
+                <span class="arrowIcon arrowIcon--right"></span>
+              </li>
+              <li class="header__mainMenu__troublesMenu__cases__lists__list__item casesText">
+                <p>Не работает экран</p>
+                <span class="arrowIcon arrowIcon--right"></span>
+              </li>
+              <li class="header__mainMenu__troublesMenu__cases__lists__list__item casesText">
+                <p>Разбит экран</p>
+                <span class="arrowIcon arrowIcon--right"></span>
+              </li>
+              <li class="header__mainMenu__troublesMenu__cases__lists__list__item casesText">
+                <p>Не работает экран</p>
+                <span class="arrowIcon arrowIcon--right"></span>
+              </li>
+            </ul>
+            <ul class="header__mainMenu__troublesMenu__cases__lists__list">
+              <span class="header__mainMenu__troublesMenu__cases__lists__list__title">
+                Корпус
+              </span>
+              <li class="header__mainMenu__troublesMenu__cases__lists__list__item casesText">
+                <p>Разбит экран</p>
+                <span class="arrowIcon arrowIcon--right"></span>
+              </li>
+              <li class="header__mainMenu__troublesMenu__cases__lists__list__item casesText">
+                <p>Не работает экран</p>
+                <span class="arrowIcon arrowIcon--right"></span>
+              </li>
+              <li class="header__mainMenu__troublesMenu__cases__lists__list__item casesText">
+                <p>Разбит экран</p>
+                <span class="arrowIcon arrowIcon--right"></span>
+              </li>
+              <li class="header__mainMenu__troublesMenu__cases__lists__list__item casesText">
+                <p>Не работает экран</p>
+                <span class="arrowIcon arrowIcon--right"></span>
+              </li>
+            </ul>
+            <ul class="header__mainMenu__troublesMenu__cases__lists__list">
+              <span class="header__mainMenu__troublesMenu__cases__lists__list__title">
+                Фурнитура
+              </span>
+              <li class="header__mainMenu__troublesMenu__cases__lists__list__item casesText">
+                <p>Разбит экран</p>
+                <span class="arrowIcon arrowIcon--right"></span>
+              </li>
+              <li class="header__mainMenu__troublesMenu__cases__lists__list__item casesText">
+                <p>Не работает экран</p>
+                <span class="arrowIcon arrowIcon--right"></span>
+              </li>
+              <li class="header__mainMenu__troublesMenu__cases__lists__list__item casesText">
+                <p>Разбит экран</p>
+                <span class="arrowIcon arrowIcon--right"></span>
+              </li>
+              <li class="header__mainMenu__troublesMenu__cases__lists__list__item casesText">
+                <p>Не работает экран</p>
+                <span class="arrowIcon arrowIcon--right"></span>
+              </li>
+            </ul>
+            <ul class="header__mainMenu__troublesMenu__cases__lists__list">
+              <span class="header__mainMenu__troublesMenu__cases__lists__list__title">
+                Аудио
+              </span>
+              <li class="header__mainMenu__troublesMenu__cases__lists__list__item casesText">
+                <p>Разбит экран</p>
+                <span class="arrowIcon arrowIcon--right"></span>
+              </li>
+              <li class="header__mainMenu__troublesMenu__cases__lists__list__item casesText">
+                <p>Не работает экран</p>
+                <span class="arrowIcon arrowIcon--right"></span>
+              </li>
+              <li class="header__mainMenu__troublesMenu__cases__lists__list__item casesText">
+                <p>Разбит экран</p>
+                <span class="arrowIcon arrowIcon--right"></span>
+              </li>
+              <li class="header__mainMenu__troublesMenu__cases__lists__list__item casesText">
+                <p>Не работает экран</p>
+                <span class="arrowIcon arrowIcon--right"></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="clients">
+      <li class="header__mainMenu__item">
+        Клиентам
+      </li>
+      <span class="header__mainMenu__item__arrowIcon arrowIcon arrowIcon--down"></span>
+      <div class="clients__dropDownMenuContainer hidden transition--opacity transparent">
+        <ul class="clients__dropDownMenuContainer__dropDownMenu">
+          <li class="clients__dropDownMenuContainer__dropDownMenu__item">
+            Акции
+          </li>
+          <li class="clients__dropDownMenuContainer__dropDownMenu__item">
+            Бонусы
+          </li>
+          <li class="clients__dropDownMenuContainer__dropDownMenu__item">
+            Гарантия
+          </li>
+        </ul>
+      </div>
+    </div>
+    <li class="header__mainMenu__item">
+      <a class="header__mainMenu__item__link">
+        Контакты
+      </a>
+    </li>
+    <li class="header__mainMenu__item">
+      <a class="header__mainMenu__item__link">
+        Задать вопрос
+      </a>
+    </li>
+    <li class="header__mainMenu__item">
+      <a class="header__mainMenu__item__link">
+        Магазин
+      </a>
+    </li>
+    <div class="header__mainMenu__diagnosticsButton diagnosticsButton transition--backgroundColor">
+      Записаться на диагностику
+    </div>
+  </ul>
+</header>
+<main class="main">
+  <div class="tagLineArea">
+    <p class="tagLineArea__tagLine pageTagLine">
+      Ремонт техники
+      <span class="tagLineArea__tagLine__mainWord">
+          Apple
+          <svg class="tagLineArea__tagLine__mainWord__circuit" width="232" height="84" viewBox="0 0 232 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M83.4192 0.31632C73.4169 2.00836 63.6182 4.10553 54.0623 6.57925C49.488 7.76129 44.992 9.05296 40.5117 10.3589C36.8147 11.4361 33.1333 12.5371 29.6086 13.8097C22.708 16.3025 16.2147 19.5055 11.3741 23.4186C6.43168 27.4032 2.17069 32.0695 0.682482 37.0312C-1.04854 42.7841 0.564992 48.6133 4.93564 53.7991C9.0243 58.6512 15.1965 62.6263 21.9169 66.1724C35.1385 73.1503 50.7099 78.3694 67.5815 81.2387C83.5994 83.965 100.455 84.5703 116.967 83.5027C133.494 82.435 149.841 79.804 165.146 75.8671C181.218 71.7347 196.093 65.9627 208.735 58.6321C221.11 51.454 235.358 41.6497 231.293 30.3774C229.436 25.2298 223.977 20.7495 218.063 17.0222C212.181 13.3188 205.241 10.2493 197.745 7.86615C190.892 5.68318 183.584 4.0531 176.057 2.98545C165.882 1.54126 155.441 1.07416 145.039 0.673793C139.909 0.473608 134.778 0.287722 129.663 0.00174318C128.857 -0.0411536 128.865 0.721456 129.663 0.769119C148.775 1.83201 168.294 1.61752 186.56 5.68795C201.826 9.09109 216.144 15.1348 225.05 23.5282C227.423 25.7636 229.28 28.1992 230.165 30.8159C231.12 33.6471 230.838 36.5832 229.593 39.3619C227.282 44.5143 221.956 48.8469 216.23 52.7934C204.599 60.8103 190.524 67.3973 174.882 72.2685C160.383 76.787 144.64 79.9184 128.622 81.7058C112.635 83.4884 96.116 83.8173 80.059 82.1538C63.579 80.4475 47.8275 76.6201 34.0106 70.891C26.781 67.893 19.8413 64.4231 14.0137 60.4385C7.8964 56.2537 3.22811 51.1871 1.72423 45.6105C-1.09554 35.1533 8.40552 24.8676 21.2746 18.3139C27.5095 15.1395 34.6685 12.8946 41.9608 10.7784C51.0232 8.14736 60.1953 5.72608 69.6885 3.72423C74.3333 2.74237 79.0251 1.85584 83.7561 1.0551C84.5315 0.921641 84.2025 0.182863 83.4192 0.31632Z" fill="#F46841"/>
+          </svg>
+          </span>
+      </span>
+    </p>
+  </div>
+  <div class="bannersArea">
+    <div id="bannersCounter" class="bannersArea__counter">
+      <span class="bannersArea__counter__count bannersArea__counter__count--active"></span>
+      <span class="bannersArea__counter__count"></span>
+      <span class="bannersArea__counter__count"></span>
+      <span class="bannersArea__counter__count"></span>
+    </div>
+    <img id="bannerImg" class="bannersArea__img" src="assets/images/banners/0.png">
+  </div>
+  <div class="recordArea">
+    <div class="recordArea__form recordForm">
+      <input
+              class="recordArea__form__input recordForm__input"
+              type="text"
+              name="name"
+              placeholder="Имя"
+      >
+      <input
+              class="recordArea__form__input recordForm__input"
+              type="text"
+              name="phone"
+              placeholder="Телефон"
+      >
+      <input
+              class="recordArea__form__input recordForm__input"
+              type="text"
+              name="case"
+              placeholder="Опишите модель устройства и поломку"
+      >
+      <div class="recordArea__form__confirmButton confirmButton transition--backgroundColor">
+        Узнать цену ремонта
+      </div>
+    </div>
+  </div>
+</main>
+<div id="modalRecord" class="modal transition--opacity transparent hidden">
+  <div class="modal__content">
+    <span class="modal__content__closeIcon closeIcon"></span>
+    <p class="modal__content__title modal__content__title--top modalTitle">
+      Записаться на диагностику
+    </p>
+    <div class="modal__content__form recordForm">
+      <input
+              class="modal__content__form__input recordForm__input"
+              type="text"
+              name="name"
+              placeholder="Имя"
+      >
+      <input
+              class="modal__content__form__input recordForm__input"
+              type="text"
+              name="phone"
+              placeholder="Телефон"
+      >
+      <input
+              class="modal__content__form__input recordForm__input"
+              type="text"
+              name="case"
+              placeholder="Опишите модель устройства и поломку"
+      >
+      <div class="modal__content__form__privacyPolicy">
+        <p class="modal__content__form__privacyPolicy__text privacyPolicy">
+          Нажимая "Отправить заявку", вы соглашаетесь с
+          <a class="modal__content__form__privacyPolicy__text__link privacyPolicy__link">
+            политикой конфиденциальности
+          </a>
+        </p>
+      </div>
+      <div class="modal__content__form__confirmButton confirmButton transition--backgroundColor">
+        Узнать цену ремонта
+      </div>
+    </div>
+  </div>
+</div>
+<div id="modalThanks" class="modal transition--opacity transparent hidden">
+  <div class="modal__content">
+    <span class="modal__content__closeIcon closeIcon"></span>
+    <p class="modal__content__title modalTitle">
+      Благодарим за заявку!
+    </p>
+    <p class="modal__content__text modalText">
+      Наш менеджер свяжется с вами в течении 5-ти минут
+    </p>
+    <div id="thanksButton" class="confirmButton transition--backgroundColor">
+      Спасибо!
+    </div>
+  </div>
+</div>
+<script src="./bundle.js"></script>
+</body>
+</html>

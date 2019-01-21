@@ -1,0 +1,86 @@
+@import '../base/consts';
+
+.confirmButton {
+  background: $orangeLight;
+  padding: 18px 55px;
+  border-radius: 2px;
+  color: $white;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  text-align: center;
+  &:hover {
+    cursor: pointer;
+    background: $orangeDark;
+  }
+}
+
+.diagnosticsButton {
+  color: $white;
+  background-color: $turquoiseLight;
+  border-radius: 2px;
+  width: fit-content;
+  padding: 17px 13px 19px 17px;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  &:hover {
+    cursor: pointer;
+    background-color: $turquoiseDark;
+  }
+}
+
+.mobileMenuButton {
+  width: 30px;
+  height: 33px;
+  padding: 1px 5px 5px;
+  &:hover {
+    cursor: pointer;
+    background: $gray;
+    border-radius: 20px;
+  }
+  .burger {
+    &, &:before, &:after {
+      display: block;
+      width: 30px;
+      height: 3px;
+      position: relative;
+      top: 50%;
+      background-color: $orangeLight;
+    }
+    &:before, &:after {
+      content: '';
+    }
+    &:before {
+      transform: translateY(-10px);
+    }
+    &:after {
+      transform: translateY(5px);
+    }
+  }
+}
+
+.pricesButton {
+  display: block;
+  border: 1px solid $turquoiseDark;
+  color: $turquoiseDark;
+  background-color: $white;
+  font-family: Lato;
+  width: 191px;
+  padding: 17px 12px 19px 16px;
+  font-weight: bold;
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  &:hover {
+    cursor: pointer;
+    background-color: rgba($turquoiseDark, 0.5);
+    color: $white;
+  }
+}
+
+
+

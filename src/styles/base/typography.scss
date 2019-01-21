@@ -1,0 +1,51 @@
+@import './consts';
+
+.pageTagLine {
+  font-family: Gilroy;
+  line-height: 48px;
+  font-size: 69px;
+}
+
+.modalTitle {
+  font-family: Gilroy;
+  font-weight: bold;
+  line-height: 51px;
+  font-size: 40px;
+  text-align: center;
+  color: $text;
+}
+
+.modalText {
+  font-family: Lato;
+  line-height: 27px;
+  font-size: 16px;
+  color: $grayDark;
+  text-align: center;
+}
+
+.casesText {
+  font-family: Lato;
+  line-height: 24px;
+  font-size: 14px;
+  color: $grayDark;
+}
+
+.privacyPolicy {
+  color: $privacyPolicyText;
+  line-height: 20px;
+  font-size: 14px;
+  font-family: Lato;
+  &__link {
+    text-decoration: underline;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .pageTagLine {
+    line-height: 51px;
+    font-size: 47px;
+  }
+}

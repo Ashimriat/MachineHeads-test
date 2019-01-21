@@ -1,0 +1,101 @@
+@import '../base/consts';
+
+
+main {
+  height: calc(100vh - 111px);
+  display: grid;
+  grid-template-areas: "a b" "c b";
+  .tagLineArea {
+    grid-area: a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__tagLine {
+      display: block;
+      max-width: 500px;
+      margin: 0;
+      text-align: center;
+      &__mainWord {
+        font-weight: bold;
+        position: relative;
+        display: block;
+        top: 20px;
+        &__circuit {
+          position: absolute;
+          left: 25%;
+        }
+      }
+    }
+  }
+}
+
+.bannersArea {
+  grid-area: b;
+  position: relative;
+  &__img {
+    width: 100%;
+    min-width: 850px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  &__counter {
+    width: 120px;
+    height: 3px;
+    position: absolute;
+    display: flex;
+    justify-content: space-evenly;
+    bottom: 140px;
+    left: 50%;
+    &__count {
+      height: 3px;
+      width: 20px;
+      background-color: $banner;
+      &--active {
+        background-color: $bannerActive;
+      }
+    }
+  }
+}
+
+.recordArea {
+  grid-area: c;
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: $tabletMax){
+  main {
+    .bannersArea {
+      &__counter {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    .tagLineArea {
+      &__tagLine {
+        &__mainWord {
+          &__circuit {
+            left: 94px;
+            top: -10px;
+            width: 130px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $phoneMax) {
+  main {
+    display: grid;
+    grid-template-areas: "a" "c";
+    .bannersArea {
+      display: none;
+    }
+  }
+}

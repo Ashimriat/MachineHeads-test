@@ -1,0 +1,48 @@
+@import '../base/consts';
+
+.modal {
+  position: absolute;
+  display: flex;
+  background-color: $modalBackground;
+  opacity: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $white;
+    width: 606px;
+    height: 574px;
+    &__closeIcon {
+      top: 22px;
+      right: 22px;
+    }
+    &__title {
+      display: block;
+      position: relative;
+      padding: 0;
+      margin: 0;
+      &--top {
+        top: -60px;
+      }
+    }
+    &__form {
+      &__privacyPolicy {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        &__text {
+          display: block;
+          max-width: 290px;
+        }
+      }
+    }
+  }
+}

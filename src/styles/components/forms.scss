@@ -1,0 +1,25 @@
+@import '../base/consts';
+
+.recordForm {
+  width: 70%;
+  min-width: 290px;
+  height: 270px;
+  padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  &__input {
+    border: none;
+    border-bottom: 2px solid $gray;
+    padding-bottom: 10px;
+    background: rgba(0, 0, 0, 0);
+    outline: none;
+    color: $gray;
+    font-size: 14px;
+    font-family: Lato;
+    &:focus {
+      color: $black;
+      background: rgba(0, 0, 0, 0);
+    }
+  }
+}

@@ -1,0 +1,21 @@
+@import 'base/consts';
+@import 'base/fonts';
+@import 'base/typography';
+@import 'components/buttons';
+@import 'components/clients';
+@import 'components/elements';
+@import 'components/forms';
+@import 'components/mainMenu';
+@import 'components/modals';
+@import 'components/troubles';
+@import 'layout/header';
+@import 'layout/main';
+@import 'utils/animations';
+@import 'utils/display';
+
+body {
+  background: $background;
+  margin: 0;
+  overflow: hidden;
+}
+

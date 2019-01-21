@@ -1,0 +1,50 @@
+@import '../base/consts';
+
+.header {
+  display: flex;
+  align-items: center;
+  padding-top: 20px;
+  &__logo {
+    display: flex;
+    flex-basis: 12%;
+    justify-content: center;
+  }
+  &__mobileMenuButton {
+    z-index: 5;
+    position: absolute;
+    top: 41px;
+    right: 5%;
+  }
+}
+
+@media screen and (max-width: $tabletMax) {
+  .header {
+    justify-content: flex-start;
+    z-index: 1;
+    &__mainMenu {
+      position: absolute;
+      top: 0;
+      right: -320px;
+      &__diagnosticsButton {
+        position: absolute;
+        bottom: 5%;
+      }
+      &__item {
+        display: block;
+        margin-bottom: 20px;
+      }
+    }
+    &__mobileMenuButton {
+      display: block;
+    }
+  }
+}
+
+@media screen and (min-width: $desktopMin) {
+  .header {
+    justify-content: center;
+    &__mobileMenuButton {
+      display: none;
+    }
+  }
+}

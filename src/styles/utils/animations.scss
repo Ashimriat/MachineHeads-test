@@ -1,0 +1,19 @@
+.transition--right {
+  transition: right 1s;
+}
+
+.transition--backgroundColor {
+  transition: background-color 0.3s;
+}
+
+.transition--opacity {
+  transition: opacity 0.5s;
+}
+
+.menu--opened {
+  right: 0 !important;
+}
+
+.mobileMenuButton--menuOpened {
+  right: 255px;
+}

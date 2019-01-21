@@ -1,0 +1,62 @@
+@import '../base/consts';
+
+.clients {
+  position: relative;
+  z-index: 9;
+  &__title:hover {
+    cursor: default;
+  }
+  &__dropDownMenuContainer {
+    &__dropDownMenu {
+      padding: 0;
+      margin: 0;
+      background: $white;
+      list-style: none;
+      &__item {
+        border-bottom: 1px solid $grayLight;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $tabletMax) {
+  .clients {
+    &__dropDownMenuContainer {
+      &__dropDownMenu {
+        position: relative;
+        top: 10px;
+        left: -10px;
+        &__item {
+          padding: 10px 0 10px 15px;
+          &:nth-child(1) {
+            border-top: 1px solid $grayLight;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $desktopMin) {
+  .clients {
+    &__dropDownMenuContainer {
+      &__dropDownMenu {
+        border-radius: 2px;
+        position: absolute;
+        box-shadow: 0 4px 8px $shadow;
+        width: 118px;
+        left: -43%;
+        top: 25px;
+        &__item {
+          padding: 15px;
+          &:nth-last-child(1) {
+            border-bottom: none;
+          }
+        }
+      }
+    }
+  }
+}

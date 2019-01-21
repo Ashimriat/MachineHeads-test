@@ -1,0 +1,263 @@
+@import '../base/consts';
+
+.header__mainMenu__troublesMenu {
+  background-color: $white;
+  position: absolute;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  z-index: 9;
+  padding: 0;
+  &__closeIcon {
+    right: 12px;
+    top: 12px;
+  }
+  &__devicesList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    list-style: none;
+    padding: 47px 0 0 0;
+    margin: 0;
+    width: 100%;
+    &__item {
+      display: inline-block;
+      flex-basis: 29.3%;
+      padding-left: 10px;
+      padding-bottom: 5px;
+      z-index: 8;
+      &--chosen {
+        border-bottom: 4px solid $orangeLight;
+      }
+      &:hover {
+        cursor: pointer;
+      }
+      &__deviceName {
+        font-family: Gilroy;
+        line-height: normal;
+        font-size: 24px;
+        color: $grayDark;
+        &--chosen {
+          color: $orangeLight;
+        }
+      }
+    }
+  }
+  &__divider {
+    display: block;
+    position: relative;
+    height: 4px;
+    background-color: $grayLight;
+    top: -4px;
+    z-index: 7;
+  }
+  &__deviceModelsList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    list-style: none;
+    padding: 35px 0 0 0;
+    margin: 0;
+    &__item {
+      font-family: Lato;
+      color: $grayDark;
+      display: inline-block;
+      &:hover {
+        cursor: pointer;
+      }
+      &--chosen {
+        color: $orangeLight;
+      }
+      &__deviceIcon {
+
+      }
+    }
+    &__all {
+      display: inline-block;
+      color: $black;
+      font-weight: bold;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  &__mobileDeviceModelsList {
+    margin-bottom: 7px;
+    position: relative;
+    left: 6%;
+    width: 88%;
+    &__title {
+      font-family: Lato;
+      font-weight: bold;
+      line-height: 24px;
+      font-size: 16px;
+      color: $black;
+    }
+    &__select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      padding: 10px 0;
+      outline: none;
+      width: 100%;
+      border: none;
+      border-bottom: 2px solid $gray;
+      &:hover {
+        cursor: pointer;
+      }
+      &__option {
+
+      }
+    }
+    &__arrowIcon {
+      position: absolute;
+      top: 45px;
+      right: 5%;
+    }
+  }
+  &__cases {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 0 30px;
+    &__title {
+      font-family: Gilroy;
+      line-height: 41px;
+      font-weight: bold;
+      font-size: 32px;
+      color: $text;
+      margin: 21px 0;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    &__lists {
+      display: flex;
+      flex-wrap: wrap;
+      &__list {
+        flex-basis: 25%;
+        max-width: 260px;
+        min-width: 141px;
+        list-style: none;
+        padding: 0 26px;
+        margin: 0;
+        &__title {
+          font-family: Lato;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 27px;
+          font-size: 16px;
+          color: $text;
+        }
+        &__item {
+          position: relative;
+          display: block;
+          border-bottom: 1px solid $grayLight;
+          &:hover {
+            padding-left: 5px;
+            cursor: pointer;
+            .arrowIcon {
+              display: block;
+            }
+          }
+          .arrowIcon {
+            display: none;
+            position: absolute;
+            left: 110px;
+            bottom: initial;
+            top: 6px;
+            border: solid $orangeLight;
+            border-width: 0 2px 2px 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $desktopMin) {
+  .header__mainMenu__troublesMenu {
+    height: 80vh;
+    width: 86%;
+    top: 80.5px;
+    left: 7%;
+    &__deviceModelsList {
+      width: 60%;
+    }
+    &__pricesButton {
+      position: absolute;
+      right: 5%;
+      top: 100px;
+    }
+    &__closeIcon {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: $tabletMax) {
+  .header__mainMenu__troublesMenu {
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    &__deviceModelsList {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    &__cases {
+      &__lists {
+        overflow-y: auto;
+        height: calc(100vh - 310px);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $tabletMax) and (min-width: $tabletMin) {
+  .header__mainMenu__troublesMenu {
+    &__pricesButton {
+      position: relative;
+      left: 30px;
+    }
+  }
+}
+
+@media screen and (min-width: $tabletMin) {
+  .header__mainMenu__troublesMenu {
+    &__mobileDeviceModelsList {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: $phoneMax) {
+  .header__mainMenu__troublesMenu {
+    &__pricesButton {
+      width: 88%;
+      padding: 17px 0 19px;
+      position: relative;
+      left: 6%;
+    }
+    &__deviceModelsList {
+      display: none;
+      &__item {
+        &__deviceIcon {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .header__mainMenu__troublesMenu {
+    &__devicesList {
+      &__item {
+        &__deviceIcon {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+
